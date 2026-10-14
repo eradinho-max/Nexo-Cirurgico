@@ -1,6 +1,6 @@
 {
   "name": "nexo-cirurgico",
-  "version": "1.4.1-mb03.2",
+  "version": "1.4.2-mb03.3",
   "private": true,
   "scripts": {
     "build": "node scripts/build-static.mjs",
