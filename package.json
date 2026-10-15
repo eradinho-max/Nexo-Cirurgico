@@ -1,13 +1,11 @@
 {
-  "name": "nexo-cirurgico",
-  "version": "1.4.2-mb03.3",
+  "name": "nexo-cirurgico-prototipo",
+  "version": "1.4.3-mb03-consolidacao",
   "private": true,
   "scripts": {
     "build": "node scripts/build-static.mjs",
     "qa": "node qa_content.js && node qa_assessment.js && node qa_atlas.js && node qa_mb03.js",
+    "qa:typography": "node scripts/qa-typography.mjs",
     "qa:deploy": "node scripts/qa-deploy.mjs"
-  },
-  "engines": {
-    "node": ">=20"
   }
 }

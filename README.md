@@ -1,13 +1,7 @@
-# Nexo Cirúrgico
+# Nexo Cirúrgico — v1.4.3
 
-Plataforma educacional de procedimentos técnicos em Medicina — estudantes e médicos em treinamento supervisionado.
+Plataforma educacional, ainda **sem validação clínica independente**. A versão consolidada contém **46 fichas**, Atlas com **41 materiais/158 variantes**, e tipografia ampliada (texto principal 16 px, demais declarações no mínimo 14 px).
 
-## Versão 1.4.2 — MB03 Lote 3
+O pacote `project-source.tar.gz` contém o código-fonte. No deploy, a Vercel extrai a fonte e publica somente a pasta `dist`. Um workflow versiona os arquivos individuais no GitHub quando permitido pelas políticas do repositório.
 
-46 fichas técnicas estruturadas (8 novas), 227 tópicos e acervo anterior preservado. **Todas as fichas permanecem em revisão clínica**, sem validação especializada ou autorização de uso como protocolo.
-
-O pacote `project-source.tar.gz` contém o código completo. Para recuperar o código em uma pasta local: `tar -xzf project-source.tar.gz`. A configuração Vercel extrai esse pacote e executa `npm run build`, servindo exclusivamente `dist`.
-
-**Próximo:** ampliar Atlas, rever referências e demonstrar habilidades com validação clínica; posteriormente MB04.
-
-Product by InMed.
+**Não substitui supervisão, treinamento clínico ou protocolos institucionais.** Product by InMed.

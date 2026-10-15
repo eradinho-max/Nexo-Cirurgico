@@ -1,0 +1,31 @@
+name: Sincronizar fontes legiveis
+on:
+  push:
+    paths:
+      - 'project-source.tar.gz'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  extract-source:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Expandir fontes auditadas
+        run: |
+          tar -xzf project-source.tar.gz
+          rm -f assets/*.jpg assets/*.jpeg PACOTE_REVISAO_INDEPENDENTE.xlsx
+      - name: Versionar arquivos do projeto
+        run: |
+          git config user.name "nexo-ci[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Fontes ja sincronizadas"
+          else
+            git commit -m "chore: extrair e versionar arquivos fonte MB03 v1.4.3"
+            git push
+          fi
