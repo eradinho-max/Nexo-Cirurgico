@@ -1,31 +1,26 @@
-name: Sincronizar fontes legiveis
+name: Validar pacote-fonte Nexo Cirúrgico
 on:
   push:
     paths:
       - 'project-source.tar.gz'
+      - '.github/workflows/source-sync.yml'
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 jobs:
-  extract-source:
-    if: github.ref == 'refs/heads/main'
+  verify-source:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Extrair fontes
+        run: tar -xzf project-source.tar.gz
+      - uses: actions/setup-node@v4
         with:
-          persist-credentials: true
-      - name: Expandir fontes auditadas
+          node-version: '22'
+      - name: QA curricular e integridade
+        run: npm run qa
+      - name: QA legibilidade e build
         run: |
-          tar -xzf project-source.tar.gz
-          rm -f assets/*.jpg assets/*.jpeg PACOTE_REVISAO_INDEPENDENTE.xlsx
-      - name: Versionar arquivos do projeto
-        run: |
-          git config user.name "nexo-ci[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "Fontes ja sincronizadas"
-          else
-            git commit -m "chore: extrair e versionar arquivos fonte MB03 v1.4.3"
-            git push
-          fi
+          npm run qa:typography
+          npm run build
+          npm run qa:deploy
