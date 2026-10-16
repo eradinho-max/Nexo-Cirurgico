@@ -1,16 +1,17 @@
 {
   "name": "nexo-cirurgico-prototipo",
-  "version": "1.4.4-auditoria-curricular",
+  "version": "1.4.5-idioma-sem-bloqueio",
   "private": true,
   "scripts": {
     "qa:content": "node qa_content.js",
     "qa:assessment": "node qa_assessment.js",
     "qa:atlas": "node qa_atlas.js",
-    "qa:ui": "node qa_ui.js",
     "qa": "npm run qa:content && npm run qa:assessment && npm run qa:atlas && npm run qa:mb03",
     "qa:mb03": "node qa_mb03.js",
     "qa:reader-lang": "node scripts/qa-reader-lang.mjs",
+    "qa:i18n": "node scripts/qa-i18n-functional.mjs",
     "qa:typography": "node scripts/qa-typography.mjs",
+    "qa:all": "npm run qa && npm run qa:reader-lang && npm run qa:i18n && npm run qa:typography && npm run build && npm run qa:deploy",
     "build": "node scripts/build-static.mjs",
     "qa:deploy": "node scripts/qa-deploy.mjs"
   },

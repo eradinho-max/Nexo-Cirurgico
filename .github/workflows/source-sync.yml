@@ -1,4 +1,4 @@
-name: Validar fonte e acessibilidade Nexo Cirúrgico
+name: Validar fonte e idiomas Nexo Cirúrgico
 on:
   push:
     paths:
@@ -17,11 +17,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validar conteudo e materiais
-        run: npm run qa
-      - name: Validar fonte, idioma e bundle publico
-        run: |
-          npm run qa:typography
-          npm run qa:reader-lang
-          npm run build
-          npm run qa:deploy
+      - name: Validar conteudo, idiomas, fonte e build
+        run: npm run qa:all
