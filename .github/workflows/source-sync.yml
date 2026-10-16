@@ -1,4 +1,4 @@
-name: Validar MB04 e integridade do projeto
+name: QA Nexo Cirúrgico MB04 Lote 2
 on:
   push:
     paths:
@@ -8,14 +8,14 @@ on:
 permissions:
   contents: read
 jobs:
-  quality:
+  qa:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Extrair código-fonte
+      - name: Extrair código completo
         run: tar -xzf project-source.tar.gz
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Auditoria de conteúdo, MB04, idioma, tipografia e build
+      - name: Verificar conteúdo, módulos, atlas, idioma, tipografia e bundle
         run: npm run qa:all

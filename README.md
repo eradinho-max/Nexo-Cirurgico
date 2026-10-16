@@ -1,11 +1,11 @@
-# Nexo Cirúrgico — v1.5.0 (MB04 — Lote 1)
+# Nexo Cirúrgico — v1.5.1 (MB04, Lote 2)
 
-Biblioteca de treino técnico para estudantes e médicos sob supervisão. **54 fichas**, incluindo 8 novas para os oito tópicos M16 Cirurgia Geral: incisão, dissecção, hemostasia, laparotomia, laparoscopia, fechamento por planos, drenos e encerramento/conversão. Guias de simulação + fichas completas de 14 campos, vínculos de instrumentos ao Atlas, pesquisa e filtro; versão PT/ES parcial (títulos e aberturas em espanhol).
+Plataforma de estudo prático de procedimentos médicos. **75 fichas técnicas** / 227 tópicos catalogados, **52 materiais** / 180 variantes, mantendo **33 trilhas, 115 aulas, 210 questões, 30 casos e 137 flashcards**.
 
-Base preservada: 33 trilhas / 115 aulas / 210 questões / 30 casos / 137 flashcards; 28 módulos, 227 tópicos, 41 materiais/158 variantes. Os materiais complementares não cadastrados no Atlas permanecem explicitamente como pendentes.
+**MB04:** M16 Cirurgia Geral (8/8), M08 Anestesia (10/10), M09 Preparo Cirúrgico (11/11). Novas fichas contam com 14 campos, kit vinculado ao Atlas, checklist e sequência de simulação. A versão PT/ES oferece títulos e introduções em espanhol; a tradução integral dos campos técnicos continua em desenvolvimento. Nenhum acesso é bloqueado por ausência de revisão externa.
 
-Fonte integral: `project-source.tar.gz`. O deploy da Vercel extrai o pacote e compila somente `dist`, sem expor documentação ou PDFs de terceiros. Para conferir: `tar -xzf project-source.tar.gz && npm run qa:all`.
+O código completo está em `project-source.tar.gz`; o build extrai o pacote e publica somente `dist`. Nenhum dos livros enviados foi copiado ou incluído no repositório. Testes: `npm run qa:all` (incluindo 208 verificações do MB04 L2).
 
-**Limites:** treinamento digital não certifica habilidade cirúrgica; técnicas invasivas exigem capacitação e supervisão. Lote 2 do MB04 contemplará anestesia e preparo perioperatório.
+**Próximo:** MB05 Lote 1 — Via aérea, oxigenoterapia e urgências. Aprendizagem digital não substitui treinamento supervisionado para procedimentos invasivos.
 
 Product by InMed.
