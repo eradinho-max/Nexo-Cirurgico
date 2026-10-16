@@ -1,4 +1,4 @@
-name: Validar fonte e idiomas Nexo Cirúrgico
+name: Validar MB04 e integridade do projeto
 on:
   push:
     paths:
@@ -8,14 +8,14 @@ on:
 permissions:
   contents: read
 jobs:
-  verify-source:
+  quality:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Extrair fontes
+      - name: Extrair código-fonte
         run: tar -xzf project-source.tar.gz
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validar conteudo, idiomas, fonte e build
+      - name: Auditoria de conteúdo, MB04, idioma, tipografia e build
         run: npm run qa:all
